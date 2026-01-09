@@ -776,9 +776,18 @@
         const navToggle = document.querySelector('.navbar-toggle');
         const navMenu = document.querySelector('.navbar-menu');
 
-        if (navToggle) {
+        if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                });
             });
         }
     </script>

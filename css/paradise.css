@@ -2416,18 +2416,59 @@ section {
 
 
     .navbar-menu {
-
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(232, 225, 216, 0.98);
+        backdrop-filter: blur(10px);
         display: none;
-
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-lg);
+        z-index: 999;
     }
 
+    .navbar-menu.active {
+        display: flex;
+    }
 
+    .navbar-menu .navbar-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-lg);
+    }
+
+    .navbar-menu .navbar-links a {
+        font-size: 1.25rem;
+        color: var(--text-primary);
+    }
+
+    .navbar-menu .btn-whatsapp {
+        margin-top: var(--space-lg);
+    }
 
     .navbar-toggle {
-
         display: flex;
-
+        position: relative;
+        z-index: 1001;
     }
+
+    .navbar-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
 
 
 

@@ -3444,3 +3444,22 @@ section {
         display: block;
     }
 }
+
+
+/* ==================== TIGHTER HEADER FIX ==================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 5px 0 !important; /* Force tight padding */
+        min-height: auto !important;
+    }
+
+    .navbar-logo .logo-img {
+        height: 75px !important; /* Slightly smaller to fit tight bar */
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar.scrolled .navbar-logo .logo-img {
+        height: 55px !important;
+    }
+}

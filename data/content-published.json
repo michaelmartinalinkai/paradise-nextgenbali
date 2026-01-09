@@ -137,24 +137,24 @@
   "gallery": {
     "images": [
       {
-        "src": "assets/images/hero-uluwatu.jpg",
-        "alt": "Villa Exterior"
+        "src": "assets/images/gallery-aerial-completed.jpg",
+        "alt": "Paradise Completed Aerial View"
       },
       {
-        "src": "assets/images/rooftop-terrace.jpg",
-        "alt": "Rooftop Terrace"
+        "src": "assets/images/gallery-construction-aerial.jpg",
+        "alt": "Construction Aerial"
       },
       {
-        "src": "assets/images/living-room.jpg",
-        "alt": "Living Room"
+        "src": "assets/images/gallery-construction-rooftop.jpg",
+        "alt": "Construction Rooftop View"
       },
       {
-        "src": "assets/images/luxury-bathroom.jpg",
-        "alt": "Luxury Bathroom"
+        "src": "assets/images/gallery-pool-render.jpg",
+        "alt": "Pool Area Render"
       },
       {
-        "src": "assets/images/interior-office.jpg",
-        "alt": "Interior"
+        "src": "assets/images/gallery-rooftop-night.jpg",
+        "alt": "Rooftop Night View"
       }
     ]
   },

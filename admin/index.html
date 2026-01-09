@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Paradise NextGen Bali</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+</head>
+<script>
+    if (!localStorage.getItem('paradise_admin_token')) {
+        window.location.href = 'login.html';
+    }
+</script>
+
+<body>
+    <!-- Top Bar -->
+    <header class="admin-topbar">
+        <div class="topbar-brand">
+            <span class="brand-icon">🌴</span>
+            <span class="brand-text">Paradise Admin</span>
+        </div>
+        <div class="topbar-actions">
+            <a href="../index.html" class="btn btn-secondary" style="text-decoration: none;">
+                <span class="btn-icon">⬅️</span> Website
+            </a>
+            <button class="btn btn-secondary"
+                onclick="localStorage.removeItem('paradise_admin_token'); window.location.href='login.html'">
+                <span class="btn-icon">🔒</span> Logout
+            </button>
+            <button class="btn btn-secondary" id="btn-preview">
+                <span class="btn-icon">👁️</span> Preview
+            </button>
+            <button class="btn btn-primary" id="btn-save-draft">
+                <span class="btn-icon">💾</span> Save Draft
+            </button>
+            <button class="btn btn-success" id="btn-publish">
+                <span class="btn-icon">🚀</span> Publish
+            </button>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Pages</div>
+                    <a href="#" class="nav-item active" data-page="home">
+                        <span class="nav-icon">🏠</span> Home / Hero
+                    </a>
+                    <a href="#" class="nav-item" data-page="villas">
+                        <span class="nav-icon">🏡</span> Projects
+                    </a>
+                    <a href="#" class="nav-item" data-page="masterplan">
+                        <span class="nav-icon">📍</span> Masterplan
+                    </a>
+                    <a href="#" class="nav-item" data-page="features">
+                        <span class="nav-icon">⭐</span> Features
+                    </a>
+                    <a href="#" class="nav-item" data-page="architecture">
+                        <span class="nav-icon">🏛️</span> Architecture
+                    </a>
+                    <a href="#" class="nav-item" data-page="gallery">
+                        <span class="nav-icon">🖼️</span> Gallery
+                    </a>
+                    <a href="#" class="nav-item" data-page="cta">
+                        <span class="nav-icon">📢</span> Call to Action
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Global</div>
+                    <a href="#" class="nav-item" data-page="navigation">
+                        <span class="nav-icon">🧭</span> Navigation
+                    </a>
+                    <a href="#" class="nav-item" data-page="footer">
+                        <span class="nav-icon">📄</span> Footer
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="status-dot draft"></span>
+                    <span class="status-text">Draft mode</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Home / Hero Page -->
+            <div class="page-editor active" id="page-home">
+                <div class="page-header">
+                    <h1>Home / Hero Section</h1>
+                    <p>Edit the main hero section of your homepage</p>
+                </div>
+
+                <div class="accordion open" data-section="home.hero">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Hero Content</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="home-hero-title">Hero Title</label>
+                            <textarea id="home-hero-title" data-key="home.hero.title" rows="2" maxlength="100"
+                                placeholder="Main headline text..."></textarea>
+                            <span class="char-count"><span class="current">0</span>/100</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Hero Media Mode</label>
+                            <div class="toggle-group">
+                                <button class="toggle-btn active" data-mode="video" data-key="home.hero.media.mode">
+                                    🎬 Video
+                                </button>
+                                <button class="toggle-btn" data-mode="image" data-key="home.hero.media.mode">
+                                    🖼️ Image
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="media-section" id="hero-video-section">
+                            <div class="form-group">
+                                <label for="home-hero-video">Hero Video</label>
+                                <div class="media-upload">
+                                    <input type="file" id="home-hero-video-file" accept="video/mp4,video/webm" hidden>
+                                    <div class="media-preview video-preview">
+                                        <video id="home-hero-video-preview" controls></video>
+                                    </div>
+                                    <button class="btn btn-upload"
+                                        onclick="document.getElementById('home-hero-video-file').click()">
+                                        📤 Upload Video
+                                    </button>
+                                    <input type="text" id="home-hero-video" data-key="home.hero.media.video.src"
+                                        placeholder="Video path..." readonly>
+                                </div>
+                                <span class="help-text">Max 50MB. Formats: MP4, WebM</span>
+                            </div>
+                        </div>
+
+                        <div class="media-section hidden" id="hero-image-section">
+                            <div class="form-group">
+                                <label for="home-hero-image">Hero Image</label>
+                                <div class="media-upload">
+                                    <input type="file" id="home-hero-image-file"
+                                        accept="image/jpeg,image/png,image/webp" hidden>
+                                    <div class="media-preview image-preview">
+                                        <img id="home-hero-image-preview" src="" alt="Preview">
+                                    </div>
+                                    <button class="btn btn-upload"
+                                        onclick="document.getElementById('home-hero-image-file').click()">
+                                        📤 Upload Image
+                                    </button>
+                                    <input type="text" id="home-hero-image" data-key="home.hero.media.image.src"
+                                        placeholder="Image path..." readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="home-hero-image-alt">Image Alt Text</label>
+                                <input type="text" id="home-hero-image-alt" data-key="home.hero.media.image.alt"
+                                    placeholder="Describe the image..." maxlength="150">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Villas Page -->
+            <div class="page-editor" id="page-villas">
+                <div class="page-header">
+                    <h1>Projects Section</h1>
+                    <p>Edit the project concepts showcase</p>
+                </div>
+
+                <div class="accordion open" data-section="villas.header">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Section Header</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="villas-header-title">Title</label>
+                            <input type="text" id="villas-header-title" data-key="villas.header.title" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="villas-header-subtitle">Subtitle</label>
+                            <input type="text" id="villas-header-subtitle" data-key="villas.header.subtitle"
+                                maxlength="100">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Cards -->
+                <div id="villas-cards-container"></div>
+            </div>
+
+            <!-- Masterplan Page -->
+            <div class="page-editor" id="page-masterplan">
+                <div class="page-header">
+                    <h1>Masterplan Section</h1>
+                    <p>Edit the masterplan display</p>
+                </div>
+
+                <div class="accordion open" data-section="masterplan">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Masterplan Content</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="masterplan-title">Title</label>
+                            <input type="text" id="masterplan-title" data-key="masterplan.title" maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label for="masterplan-subtitle">Subtitle</label>
+                            <input type="text" id="masterplan-subtitle" data-key="masterplan.subtitle" maxlength="60">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Left Image</label>
+                                <div class="media-upload compact">
+                                    <input type="file" id="masterplan-left-image-file" accept="image/*" hidden>
+                                    <div class="media-preview image-preview small">
+                                        <img id="masterplan-left-image-preview" src="" alt="Preview">
+                                    </div>
+                                    <button class="btn btn-upload btn-sm"
+                                        onclick="document.getElementById('masterplan-left-image-file').click()">📤
+                                        Upload</button>
+                                    <input type="hidden" id="masterplan-left-image" data-key="masterplan.leftImage.src">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Plan Image</label>
+                                <div class="media-upload compact">
+                                    <input type="file" id="masterplan-plan-image-file" accept="image/*" hidden>
+                                    <div class="media-preview image-preview small">
+                                        <img id="masterplan-plan-image-preview" src="" alt="Preview">
+                                    </div>
+                                    <button class="btn btn-upload btn-sm"
+                                        onclick="document.getElementById('masterplan-plan-image-file').click()">📤
+                                        Upload</button>
+                                    <input type="hidden" id="masterplan-plan-image" data-key="masterplan.planImage.src">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Page -->
+            <div class="page-editor" id="page-features">
+                <div class="page-header">
+                    <h1>Features Section</h1>
+                    <p>Edit the 6 feature cards</p>
+                </div>
+
+                <div class="accordion open" data-section="features.header">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Section Header</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="features-header-title">Title</label>
+                            <input type="text" id="features-header-title" data-key="features.header.title"
+                                maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="features-header-subtitle">Subtitle</label>
+                            <input type="text" id="features-header-subtitle" data-key="features.header.subtitle"
+                                maxlength="120">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Cards Container -->
+                <div id="features-cards-container"></div>
+            </div>
+
+            <!-- Architecture Page -->
+            <div class="page-editor" id="page-architecture">
+                <div class="page-header">
+                    <h1>Architecture Section</h1>
+                    <p>Edit the architecture & interiors section</p>
+                </div>
+
+                <div class="accordion open" data-section="architecture">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Architecture Content</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="architecture-title">Title</label>
+                            <input type="text" id="architecture-title" data-key="architecture.title" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="architecture-para-1">Paragraph 1</label>
+                            <textarea id="architecture-para-1" data-key="architecture.paragraphs.0" rows="3"
+                                maxlength="300"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="architecture-para-2">Paragraph 2</label>
+                            <textarea id="architecture-para-2" data-key="architecture.paragraphs.1" rows="3"
+                                maxlength="200"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Section Image</label>
+                            <div class="media-upload">
+                                <input type="file" id="architecture-image-file" accept="image/*" hidden>
+                                <div class="media-preview image-preview">
+                                    <img id="architecture-image-preview" src="" alt="Preview">
+                                </div>
+                                <button class="btn btn-upload"
+                                    onclick="document.getElementById('architecture-image-file').click()">📤 Upload
+                                    Image</button>
+                                <input type="hidden" id="architecture-image" data-key="architecture.image.src">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Page -->
+            <div class="page-editor" id="page-gallery">
+                <div class="page-header">
+                    <h1>Gallery Section</h1>
+                    <p>Edit the photo gallery</p>
+                </div>
+
+                <div class="accordion open" data-section="gallery">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Gallery Images</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div id="gallery-images-container" class="gallery-grid-editor"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Page -->
+            <div class="page-editor" id="page-cta">
+                <div class="page-header">
+                    <h1>Call to Action Section</h1>
+                    <p>Edit the call to action block</p>
+                </div>
+
+                <div class="accordion open" data-section="cta">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">CTA Content</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="cta-title">Title</label>
+                            <input type="text" id="cta-title" data-key="cta.title" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="cta-description">Description</label>
+                            <textarea id="cta-description" data-key="cta.description" rows="2"
+                                maxlength="200"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cta-button-label">Button Label</label>
+                                <input type="text" id="cta-button-label" data-key="cta.button.label" maxlength="30">
+                            </div>
+                            <div class="form-group">
+                                <label for="cta-button-href">Button Link</label>
+                                <select id="cta-button-href" data-key="cta.button.href">
+                                    <option value="#home">Home</option>
+                                    <option value="#villas">Villas</option>
+                                    <option value="#masterplan">Masterplan</option>
+                                    <option value="#about">About</option>
+                                    <option value="#contact">Contact</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Page -->
+            <div class="page-editor" id="page-navigation">
+                <div class="page-header">
+                    <h1>Navigation</h1>
+                    <p>Edit the site navigation</p>
+                </div>
+
+                <div class="accordion open" data-section="navigation">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Navigation Settings</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label>Logo</label>
+                            <div class="media-upload compact">
+                                <input type="file" id="nav-logo-file" accept="image/*" hidden>
+                                <div class="media-preview image-preview small">
+                                    <img id="nav-logo-preview" src="" alt="Logo Preview">
+                                </div>
+                                <button class="btn btn-upload btn-sm"
+                                    onclick="document.getElementById('nav-logo-file').click()">📤 Upload Logo</button>
+                                <input type="hidden" id="nav-logo" data-key="navigation.logo.src">
+                            </div>
+                        </div>
+                        <div id="nav-links-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Page -->
+            <div class="page-editor" id="page-footer">
+                <div class="page-header">
+                    <h1>Footer</h1>
+                    <p>Edit the site footer</p>
+                </div>
+
+                <div class="accordion open" data-section="footer.brand">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Brand Info</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="footer-brand-name">Brand Name</label>
+                                <input type="text" id="footer-brand-name" data-key="footer.brand.name" maxlength="30">
+                            </div>
+                            <div class="form-group">
+                                <label for="footer-brand-tagline">Tagline</label>
+                                <input type="text" id="footer-brand-tagline" data-key="footer.brand.tagline"
+                                    maxlength="30">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="footer-brand-description">Description</label>
+                            <textarea id="footer-brand-description" data-key="footer.brand.description" rows="3"
+                                maxlength="250"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion" data-section="footer.contact">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Contact Info</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="footer-contact-location">Location</label>
+                            <input type="text" id="footer-contact-location" data-key="footer.contact.location"
+                                maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="footer-contact-country">Country</label>
+                            <input type="text" id="footer-contact-country" data-key="footer.contact.country"
+                                maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label for="footer-contact-email">Email</label>
+                            <input type="email" id="footer-contact-email" data-key="footer.contact.email"
+                                maxlength="50">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion" data-section="footer.social">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Social Links</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="footer-social-instagram">Instagram URL</label>
+                            <input type="url" id="footer-social-instagram" data-key="footer.social.instagram"
+                                placeholder="https://instagram.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="footer-social-linkedin">LinkedIn URL</label>
+                            <input type="url" id="footer-social-linkedin" data-key="footer.social.linkedin"
+                                placeholder="https://linkedin.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="footer-social-youtube">YouTube URL</label>
+                            <input type="url" id="footer-social-youtube" data-key="footer.social.youtube"
+                                placeholder="https://youtube.com/...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion" data-section="footer.copyright">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">▼</span>
+                        <span class="accordion-title">Copyright</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="form-group">
+                            <label for="footer-copyright">Copyright Text</label>
+                            <input type="text" id="footer-copyright" data-key="footer.copyright" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="footer-tagline">Footer Tagline</label>
+                            <input type="text" id="footer-tagline" data-key="footer.tagline" maxlength="60">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/admin.js?v=3"></script>
+</body>
+
+</html>

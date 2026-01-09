@@ -1,0 +1,99 @@
+/* ============================================
+   NEXTGEN BALI - Image Styles
+   Styles for real images
+   ============================================ */
+
+/* Hero image styling */
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Project images */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Construction images */
+.construction-video img,
+.construction-gallery-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Team member placeholders - still need real photos */
+.team-member-image {
+    background: linear-gradient(135deg, #E8E4DC 0%, #D4CFC5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.team-member-image img {
+    opacity: 0;
+}
+
+.team-member-image::after {
+    content: '👤';
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.3;
+}
+
+/* Testimonial avatar placeholders */
+.testimonial-avatar img {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #E8E4DC 0%, #D4CFC5 100%);
+    border-radius: 50%;
+}
+
+/* Testimonial video placeholder */
+.testimonial-video {
+    background: linear-gradient(135deg, #2C2C2C 0%, #3D3D3D 100%);
+}
+
+.testimonial-video img {
+    opacity: 0;
+}
+
+/* Brochure mockup placeholder */
+.brochure-mockup {
+    min-height: 300px;
+    background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brochure-mockup::after {
+    content: '📄 Brochure Preview';
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+/* Media logo text styles */
+.media-logo.text-logo {
+    background: transparent;
+    height: auto;
+    width: auto;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+    display: block;
+    opacity: 0.8;
+}

@@ -1,0 +1,238 @@
+{
+  "home": {
+    "hero": {
+      "title": "IF YOU CAN DREAM IT,<br>WE CAN BUILD IT",
+      "media": {
+        "mode": "",
+        "image": {
+          "src": "assets/images/hero-uluwatu.jpg",
+          "alt": "Luxury villa in Bali"
+        },
+        "video": {
+          "src": "assets/videos/website-movie.mp4",
+          "poster": "assets/images/hero-uluwatu.jpg"
+        }
+      }
+    }
+  },
+  "villas": {
+    "header": {
+      "title": "Our Project",
+      "subtitle": "Architectural excellence in the heart of Bali"
+    },
+    "tabs": [
+      "Studio Apartment",
+      "One Bedroom Apartment",
+      "Two Bedroom Apartment"
+    ],
+    "cards": [
+      {
+        "title": "Studio Apartment",
+        "image": {
+          "src": "assets/images/studio-apartment.jpg",
+          "alt": "Studio Apartment"
+        }
+      },
+      {
+        "title": "One Bedroom Apartment",
+        "image": {
+          "src": "assets/images/one-bedroom-apartment.jpg",
+          "alt": "One Bedroom Apartment"
+        }
+      },
+      {
+        "title": "Two Bedroom Apartment",
+        "image": {
+          "src": "assets/images/two-bedroom-apartment.jpg",
+          "alt": "Two Bedroom Apartment"
+        }
+      }
+    ]
+  },
+  "masterplan": {
+    "title": "PREMIUM",
+    "subtitle": "Paradise Villas in Bali",
+    "leftImage": {
+      "src": "assets/images/living-room.jpg",
+      "alt": "Premium Interior"
+    },
+    "planImage": {
+      "src": "assets/images/paradise-masterplan.png",
+      "alt": "Paradise Villas Masterplan"
+    }
+  },
+  "features": {
+    "header": {
+      "title": "Why Choose Paradise",
+      "subtitle": "Six pillars of excellence that define our commitment to your investment"
+    },
+    "cards": [
+      {
+        "number": "01",
+        "title": "Private Gym",
+        "description": "Elevate Your Routine. Skip the commute and step into a fully equipped private gym right at your doorstep. Whether you’re starting the day with high energy or winding down after work, our state-of-the-art fitness center offers the privacy and convenience you need to stay at the top of your game.",
+        "image": {
+          "src": "assets/images/private_gym.jpg",
+          "alt": "Private Gym"
+        }
+      },
+      {
+        "number": "02",
+        "title": "Co-Working Space",
+        "description": "Where Focus Meets Inspiration. The ultimate balance between productivity and island life. Our high-end Co-Working Space is designed for the modern digital nomad: lightning-fast internet, ergonomic workstations, and climate control. Network with like-minded professionals without ever leaving the property.",
+        "image": {
+          "src": "assets/images/feature_premium_location_1766176574202.png",
+          "alt": "Co-Working Space"
+        }
+      },
+      {
+        "number": "03",
+        "title": "Sauna",
+        "description": "The Art of Decompressing. Experience ultimate wellness after a surf session or a long day of work. Our sauna is the perfect sanctuary to unwind, relax your muscles, and reset your body. A moment of pure silence and luxury, just for you.",
+        "image": {
+          "src": "assets/images/sauna_luxury_bali.png",
+          "alt": "Sauna"
+        }
+      },
+      {
+        "number": "04",
+        "title": "Jacuzzi",
+        "description": "Unwind in Luxury. End your evening in style. Enjoy a glass of wine in the warm, soothing waters of the jacuzzi while overlooking the tropical surroundings. The ideal setting to socialize or simply gaze at the Balinese starry sky.",
+        "image": {
+          "src": "assets/images/feature_management_1766176616637.png",
+          "alt": "Jacuzzi"
+        }
+      },
+      {
+        "number": "05",
+        "title": "Roof Top Terrace",
+        "description": "Your Sunset Lounge. The best seat in the house for the famous Bali sunsets. Our rooftop terrace offers panoramic views over Uluwatu. It is the exclusive lounge area for a morning coffee in the sun or a cocktail during golden hour.",
+        "image": {
+          "src": "assets/images/roof_top_terrace.jpg",
+          "alt": "Roof Top Terrace"
+        }
+      },
+      {
+        "number": "06",
+        "title": "Tropical Oasis",
+        "description": "Dive into Serenity. The blue heart of Uluwatu Paradise. Take a refreshing dip in the crystal-clear swimming pool, surrounded by lush greenery. Whether you’re swimming laps or lounging by the water: here, every day feels like a holiday.",
+        "image": {
+          "src": "assets/images/tropical_oasis.jpg",
+          "alt": "Tropical Oasis"
+        }
+      }
+    ]
+  },
+  "architecture": {
+    "title": "Architecture & Interiors",
+    "paragraphs": [
+      "Every Paradise villa is designed with meticulous attention to detail. We blend contemporary architecture with Balinese craftsmanship, creating spaces that are both timeless and deeply connected to their tropical surroundings.",
+      "Our interiors feature natural materials, warm lighting, and carefully curated furnishings that create an atmosphere of refined luxury."
+    ],
+    "image": {
+      "src": "assets/images/ngh_office_interior.jpg",
+      "alt": "Premium Interior"
+    }
+  },
+  "gallery": {
+    "images": [
+      {
+        "src": "assets/images/hero-uluwatu.jpg",
+        "alt": "Villa Exterior"
+      },
+      {
+        "src": "assets/images/rooftop-terrace.jpg",
+        "alt": "Rooftop Terrace"
+      },
+      {
+        "src": "assets/images/living-room.jpg",
+        "alt": "Living Room"
+      },
+      {
+        "src": "assets/images/luxury-bathroom.jpg",
+        "alt": "Luxury Bathroom"
+      },
+      {
+        "src": "assets/images/interior-office.jpg",
+        "alt": "Interior"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Start Your Journey",
+    "description": "Discover how PARADISE can turn your vision into reality. Our team is ready to guide you through every step.",
+    "button": {
+      "label": "Request Information",
+      "href": "#contact"
+    }
+  },
+  "navigation": {
+    "logo": {
+      "src": "assets/images/ngh-logo-new.png",
+      "alt": "NGH Bali Property Group"
+    },
+    "links": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "Projects",
+        "href": "#villas"
+      },
+      {
+        "label": "About Us",
+        "href": ""
+      },
+      {
+        "label": "Blog",
+        "href": ""
+      },
+      {
+        "label": "FAQ",
+        "href": ""
+      }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "name": "PARADISE",
+      "tagline": "by Next Gen",
+      "description": "Premium villa development in Bali. We combine architectural excellence with thoughtful hospitality to create extraordinary living spaces."
+    },
+    "navigation": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "Projects",
+        "href": "#villas"
+      },
+      {
+        "label": "About Us",
+        "href": "about.html"
+      },
+      {
+        "label": "Blog",
+        "href": "blog.html"
+      },
+      {
+        "label": "FAQ",
+        "href": "faq.html"
+      }
+    ],
+    "contact": {
+      "location": "Uluwatu, Bali",
+      "country": "Indonesia",
+      "email": "info@paradise-nextgen.com"
+    },
+    "social": {
+      "instagram": "#",
+      "linkedin": "#",
+      "youtube": "#"
+    },
+    "copyright": "© 2024 PARADISE by Next Gen. All rights reserved.",
+    "tagline": "Designed with restraint and confidence."
+  }
+}

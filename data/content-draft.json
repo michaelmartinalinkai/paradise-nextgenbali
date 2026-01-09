@@ -1,0 +1,238 @@
+{
+  "home": {
+    "hero": {
+      "title": "IF YOU CAN DREAM IT,<br>WE CAN BUILD IT",
+      "media": {
+        "mode": "",
+        "image": {
+          "src": "assets/images/hero-uluwatu.jpg",
+          "alt": "Luxury villa in Bali"
+        },
+        "video": {
+          "src": "assets/videos/website-movie.mp4",
+          "poster": "assets/images/hero-uluwatu.jpg"
+        }
+      }
+    }
+  },
+  "villas": {
+    "header": {
+      "title": "Our Residential Projects",
+      "subtitle": "Architectural excellence in the heart of Bali"
+    },
+    "tabs": [
+      "CUSTOM VILLA",
+      "LUXURY VILLA",
+      "PRESIDENTIAL VILLA"
+    ],
+    "cards": [
+      {
+        "title": "CUSTOM VILLA",
+        "image": {
+          "src": "assets/images/villa_custom_1766177184636.png",
+          "alt": "Custom Villa"
+        }
+      },
+      {
+        "title": "LUXURY VILLA",
+        "image": {
+          "src": "assets/images/villa_luxury_1766177197924.png",
+          "alt": "Luxury Villa"
+        }
+      },
+      {
+        "title": "PRESIDENTIAL VILLA",
+        "image": {
+          "src": "assets/images/villa_presidential_1766177211044.png",
+          "alt": "Presidential Villa"
+        }
+      }
+    ]
+  },
+  "masterplan": {
+    "title": "PREMIUM",
+    "subtitle": "Paradise Villas in Bali",
+    "leftImage": {
+      "src": "assets/images/living-room.jpg",
+      "alt": "Premium Interior"
+    },
+    "planImage": {
+      "src": "assets/images/paradise-masterplan.png",
+      "alt": "Paradise Villas Masterplan"
+    }
+  },
+  "features": {
+    "header": {
+      "title": "Why Choose Paradise",
+      "subtitle": "Six pillars of excellence that define our commitment to your investment"
+    },
+    "cards": [
+      {
+        "number": "01",
+        "title": "In-House Development",
+        "description": "Our dedicated team manages every aspect of your investment – from design to construction to final delivery.",
+        "image": {
+          "src": "assets/images/feature_inhouse_dev_1766176560105.png",
+          "alt": "In-House Development"
+        }
+      },
+      {
+        "number": "02",
+        "title": "Premium Locations",
+        "description": "We select only the finest locations in Bali, creating destinations with resort-level amenities and services.",
+        "image": {
+          "src": "assets/images/feature_premium_location_1766176574202.png",
+          "alt": "Premium Locations"
+        }
+      },
+      {
+        "number": "03",
+        "title": "Full Transparency",
+        "description": "Regular updates, clear communication, and direct reporting. We believe in building trust through openness.",
+        "image": {
+          "src": "assets/images/feature_transparency_1766176589212.png",
+          "alt": "Full Transparency"
+        }
+      },
+      {
+        "number": "04",
+        "title": "Property Management",
+        "description": "After completion, our team handles everything – rentals, maintenance, cleaning, and guest services.",
+        "image": {
+          "src": "assets/images/feature_management_1766176616637.png",
+          "alt": "Property Management"
+        }
+      },
+      {
+        "number": "05",
+        "title": "Legal Compliance",
+        "description": "Our team handles all legal and fiscal matters, ensuring full compliance while you focus on your portfolio.",
+        "image": {
+          "src": "assets/images/feature_legal_1766176631639.png",
+          "alt": "Legal Compliance"
+        }
+      },
+      {
+        "number": "06",
+        "title": "Long-term Vision",
+        "description": "We're here for the long term. With 5+ years commitment per project and a 5-year construction warranty.",
+        "image": {
+          "src": "assets/images/feature_longterm_1766176645509.png",
+          "alt": "Long-term Vision"
+        }
+      }
+    ]
+  },
+  "architecture": {
+    "title": "Architecture & Interiors",
+    "paragraphs": [
+      "Every Paradise villa is designed with meticulous attention to detail. We blend contemporary architecture with Balinese craftsmanship, creating spaces that are both timeless and deeply connected to their tropical surroundings.",
+      "Our interiors feature natural materials, warm lighting, and carefully curated furnishings that create an atmosphere of refined luxury."
+    ],
+    "image": {
+      "src": "assets/images/interior-office.jpg",
+      "alt": "Premium Interior"
+    }
+  },
+  "gallery": {
+    "images": [
+      {
+        "src": "assets/images/hero-uluwatu.jpg",
+        "alt": "Villa Exterior"
+      },
+      {
+        "src": "assets/images/rooftop-terrace.jpg",
+        "alt": "Rooftop Terrace"
+      },
+      {
+        "src": "assets/images/living-room.jpg",
+        "alt": "Living Room"
+      },
+      {
+        "src": "assets/images/luxury-bathroom.jpg",
+        "alt": "Luxury Bathroom"
+      },
+      {
+        "src": "assets/images/interior-office.jpg",
+        "alt": "Interior"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Start Your Journey",
+    "description": "Discover how PARADISE can turn your vision into reality. Our team is ready to guide you through every step.",
+    "button": {
+      "label": "Request Information",
+      "href": "#contact"
+    }
+  },
+  "navigation": {
+    "logo": {
+      "src": "assets/images/ngh-logo-new.png",
+      "alt": "NGH Bali Property Group"
+    },
+    "links": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "Projects",
+        "href": "#villas"
+      },
+      {
+        "label": "About Us",
+        "href": ""
+      },
+      {
+        "label": "Blog",
+        "href": ""
+      },
+      {
+        "label": "FAQ",
+        "href": ""
+      }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "name": "PARADISE",
+      "tagline": "by Next Gen",
+      "description": "Premium villa development in Bali. We combine architectural excellence with thoughtful hospitality to create extraordinary living spaces."
+    },
+    "navigation": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "Projects",
+        "href": "#villas"
+      },
+      {
+        "label": "About Us",
+        "href": "about.html"
+      },
+      {
+        "label": "Blog",
+        "href": "blog.html"
+      },
+      {
+        "label": "FAQ",
+        "href": "faq.html"
+      }
+    ],
+    "contact": {
+      "location": "Uluwatu, Bali",
+      "country": "Indonesia",
+      "email": "info@paradise-nextgen.com"
+    },
+    "social": {
+      "instagram": "#",
+      "linkedin": "#",
+      "youtube": "#"
+    },
+    "copyright": "© 2024 PARADISE by Next Gen. All rights reserved.",
+    "tagline": "Designed with restraint and confidence."
+  }
+}

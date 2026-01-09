@@ -201,7 +201,7 @@ class ParadiseAdmin {
                 "description": "Discover how PARADISE can turn your vision into reality. Our team is ready to guide you through every step.",
                 "button": {
                     "label": "Request Information",
-                    "href": "#contact"
+                    "href": "https://wa.me/6285190520175"
                 }
             },
             "navigation": {

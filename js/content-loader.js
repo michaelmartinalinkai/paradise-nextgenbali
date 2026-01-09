@@ -337,7 +337,8 @@ class ContentLoader {
             brandDesc.textContent = footer.brand.description;
         }
 
-        // Contact
+        // Contact - DISABLED to preserve HTML layout/address
+        /* 
         const contactList = document.querySelectorAll('.footer-column:nth-child(3) .footer-links li');
         if (contactList.length >= 3 && footer.contact) {
             if (footer.contact.location) contactList[0].textContent = footer.contact.location;
@@ -346,6 +347,7 @@ class ContentLoader {
                 contactList[2].innerHTML = `<a href="mailto:${footer.contact.email}">${footer.contact.email}</a>`;
             }
         }
+        */
 
         // Social
         const socialLinks = document.querySelectorAll('.footer-column:nth-child(4) .footer-links a');
@@ -355,11 +357,13 @@ class ContentLoader {
             if (footer.social.youtube) socialLinks[2].href = footer.social.youtube;
         }
 
-        // Copyright
+        // Copyright - DISABLED to preserve "Powered by" link and layout
+        /*
         const copyright = document.querySelector('.footer-bottom p:first-child');
         const tagline = document.querySelector('.footer-bottom p:last-child');
         if (copyright && footer.copyright) copyright.textContent = footer.copyright;
         if (tagline && footer.tagline) tagline.textContent = footer.tagline;
+        */
     }
 }
 

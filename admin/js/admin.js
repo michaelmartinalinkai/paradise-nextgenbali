@@ -239,7 +239,7 @@ class ParadiseAdmin {
                     "linkedin": "#",
                     "youtube": "#"
                 },
-                "copyright": "© 2024 PARADISE by Next Gen. All rights reserved.",
+                "copyright": "© 2026 Uluwatu Paradise by Next-Gen Home",
                 "tagline": "Designed with restraint and confidence."
             }
         };

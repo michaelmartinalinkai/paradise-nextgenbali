@@ -3386,3 +3386,18 @@ section {
 .contact-social-icons a:hover {
     opacity: 1;
 }
+
+/* ==================== MOBILE HEADER ADJUSTMENTS ==================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-logo .logo-img {
+        height: 85px;
+    }
+
+    .navbar.scrolled .navbar-logo .logo-img {
+        height: 60px;
+    }
+}

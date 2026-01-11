@@ -326,11 +326,13 @@ class ContentLoader {
         const footer = this.content.footer;
         if (!footer) return;
 
-        // Brand
+        // Brand - DISABLED to preserve hardcoded exact branding
+        /*
         const brandLogo = document.querySelector('.footer-logo');
         if (brandLogo && footer.brand) {
             brandLogo.innerHTML = `${footer.brand.name}<span>${footer.brand.tagline}</span>`;
         }
+        */
 
         const brandDesc = document.querySelector('.footer-description');
         if (brandDesc && footer.brand?.description) {

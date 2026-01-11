@@ -1730,27 +1730,11 @@ section {
 
 
 .footer-logo {
-
     font-family: var(--font-heading);
-
     font-size: 1.75rem;
-
     font-weight: 600;
-
     letter-spacing: 0.1em;
-
-    text-transform: uppercase;
-
     margin-bottom: var(--space-md);
-
-}
-
-
-
-.footer-logo span {
-
-    opacity: 0.6;
-
 }
 
 

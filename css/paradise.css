@@ -3521,7 +3521,7 @@ section {
 /* ==================== ABOUT NGH SECTION RESPONSIVE ==================== */
 @media (max-width: 900px) {
     .about-ngh {
-        padding: 80px 20px !important;
+        padding: 140px 20px 80px !important;
     }
 
     .about-ngh__content {

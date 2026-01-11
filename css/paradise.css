@@ -712,9 +712,10 @@ section {
 
     width: 100%;
 
-    height: 100vh;
-
-    min-height: 600px;
+    /* Modern viewport height - prevents iOS/Android vh jump */
+    height: auto;
+    min-height: 100svh;
+    max-height: 800px;
 
     overflow: hidden;
 
@@ -724,6 +725,37 @@ section {
 
     justify-content: center;
 
+}
+
+/* Use dynamic viewport height if supported */
+@supports (min-height: 100dvh) {
+    .hero-video {
+        min-height: 100dvh;
+    }
+}
+
+/* Mobile landscape: prevent vertical stretch */
+@media (orientation: landscape) and (max-width: 932px) {
+    .hero-video {
+        min-height: 360px;
+        max-height: 520px;
+    }
+}
+
+/* Tablet portrait: prevent vertical stretch */
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+    .hero-video {
+        min-height: 520px;
+        max-height: 700px;
+    }
+}
+
+/* Desktop: full viewport hero */
+@media (min-width: 1025px) {
+    .hero-video {
+        min-height: 600px;
+        max-height: none;
+    }
 }
 
 
@@ -3416,8 +3448,10 @@ section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* Changed from center to start */
-        padding-top: 140px; /* Push content down below logo */
+        justify-content: flex-start;
+        /* Changed from center to start */
+        padding-top: 140px;
+        /* Push content down below logo */
         gap: 2rem;
         transform: translateX(100%);
         transition: transform 0.4s ease-in-out;
@@ -3449,12 +3483,14 @@ section {
 /* ==================== TIGHTER HEADER FIX ==================== */
 @media (max-width: 768px) {
     .navbar {
-        padding: 5px 0 !important; /* Force tight padding */
+        padding: 5px 0 !important;
+        /* Force tight padding */
         min-height: auto !important;
     }
 
     .navbar-logo .logo-img {
-        height: 75px !important; /* Slightly smaller to fit tight bar */
+        height: 75px !important;
+        /* Slightly smaller to fit tight bar */
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -3462,4 +3498,22 @@ section {
     .navbar.scrolled .navbar-logo .logo-img {
         height: 55px !important;
     }
+}
+
+/* ==================== LINKAI FOOTER LINK - GOLDEN GLOW ==================== */
+.linkai-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+.linkai-link .linkai-text {
+    transition: all 0.3s ease;
+}
+
+.linkai-link:hover .linkai-text {
+    color: #D4AF37;
+    text-shadow:
+        0 0 8px rgba(212, 175, 55, 0.8),
+        0 0 20px rgba(212, 175, 55, 0.6),
+        0 0 35px rgba(212, 175, 55, 0.4);
 }

@@ -3517,3 +3517,19 @@ section {
         0 0 20px rgba(212, 175, 55, 0.6),
         0 0 35px rgba(212, 175, 55, 0.4);
 }
+
+/* ==================== ABOUT NGH SECTION RESPONSIVE ==================== */
+@media (max-width: 900px) {
+    .about-ngh {
+        padding: 80px 20px !important;
+    }
+
+    .about-ngh__content {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+    }
+
+    .about-ngh__intro h2 {
+        font-size: 36px !important;
+    }
+}

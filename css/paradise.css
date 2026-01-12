@@ -3517,3 +3517,107 @@ section {
         font-size: 36px !important;
     }
 }
+
+/* ==================== FOOTER LAYOUT FIX ==================== */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Always side by side */
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-column h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Mobile & Tablet adjustments */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        /* Stack brand above links */
+        gap: 40px;
+        text-align: left !important;
+    }
+
+    .footer-right {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        /* FORCE side-by-side on mobile */
+        gap: 20px;
+        width: 100%;
+        text-align: left !important;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+        text-align: left !important;
+    }
+
+    .footer-column {
+        text-align: left !important;
+    }
+
+    .footer-logo {
+        text-align: left !important;
+    }
+
+    .footer-description {
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Only on very small screens, maybe reduce gap */
+    .footer-right {
+        gap: 15px;
+    }
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: left !important;
+        align-items: flex-start !important;
+    }
+
+    .footer-copyright,
+    .footer-bottom p {
+        text-align: left !important;
+    }
+}

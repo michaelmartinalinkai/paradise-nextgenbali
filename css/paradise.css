@@ -3560,9 +3560,9 @@ section {
 
     .footer-right {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        /* FORCE side-by-side on mobile */
-        gap: 20px;
+        grid-template-columns: 0.7fr 1.3fr !important;
+        /* FORCE side-by-side on mobile, favoring Contact content */
+        gap: 15px;
         width: 100%;
         text-align: left !important;
     }
@@ -3612,12 +3612,12 @@ section {
         padding-right: 20px;
         flex-direction: column;
         gap: 1rem;
-        text-align: left !important;
-        align-items: flex-start !important;
+        text-align: right !important;
+        align-items: flex-end !important;
     }
 
     .footer-copyright,
     .footer-bottom p {
-        text-align: left !important;
+        text-align: right !important;
     }
 }
